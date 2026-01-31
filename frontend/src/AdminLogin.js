@@ -9,7 +9,7 @@ export default function AdminLogin({ setToken }) {
   const login = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/admin/login",
+        "https://mediflow-backend-v54m.onrender.com/api/admin/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

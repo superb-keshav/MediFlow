@@ -11,7 +11,7 @@ export default function CustomerView({ dark }) {
   const [category, setCategory] = useState("All");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/medicines")
+    fetch("https://mediflow-backend-v54m.onrender.com/api/medicines")
       .then(res => res.json())
       .then(setMeds);
   }, []);

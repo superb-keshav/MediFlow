@@ -8,7 +8,7 @@ export default function AdminStats({ onLowStockClick }) {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/medicines")
+    fetch("https://mediflow-backend-v54m.onrender.com/api/medicines")
       .then(res => res.json())
       .then(data => {
         const today = new Date();

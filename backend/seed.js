@@ -1,6 +1,11 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/medical_inventory_full");
+// mongoose.connect("mongodb://127.0.0.1:27017/medical_inventory_full");
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.error("MongoDB error:", err));
 
 const MedicineSchema = new mongoose.Schema({
   name: String,

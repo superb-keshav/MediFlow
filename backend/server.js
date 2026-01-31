@@ -1,3 +1,4 @@
+require("dotenv").config();
 
 const cors = require("cors");
 const express = require("express");
@@ -10,7 +11,11 @@ app.use(express.json());
 app.use(cors());
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/medical_inventory_full");
+// mongoose.connect("mongodb://127.0.0.1:27017/medical_inventory_full");
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.error("MongoDB error:", err));
 
 const Admin = mongoose.model("Admin", new mongoose.Schema({
   username: String,

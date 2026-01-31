@@ -16,7 +16,7 @@ export default function Dashboard({ token }) {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/medicines", {
+      const res = await fetch("https://mediflow-backend-v54m.onrender.com/api/medicines", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

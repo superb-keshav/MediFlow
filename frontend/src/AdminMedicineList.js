@@ -13,7 +13,7 @@ export default function AdminMedicineList({ token, filter }) {
   const [search, setSearch] = useState("");
 
   const fetchMedicines = async () => {
-    const res = await fetch("http://localhost:5000/api/medicines");
+    const res = await fetch("https://mediflow-backend-v54m.onrender.com/api/medicines");
     const data = await res.json();
     setMeds(data);
   };
@@ -42,7 +42,7 @@ export default function AdminMedicineList({ token, filter }) {
       return;
     }
 
-    await fetch(`http://localhost:5000/api/medicines/${id}`, {
+    await fetch(`https://mediflow-backend-v54m.onrender.com/api/medicines/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default function AdminMedicineList({ token, filter }) {
   const deleteMedicine = async (id) => {
     if (!window.confirm("Delete this medicine?")) return;
 
-    await fetch(`http://localhost:5000/api/medicines/${id}`, {
+    await fetch(`https://mediflow-backend-v54m.onrender.com/api/medicines/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: token
