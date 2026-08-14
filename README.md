@@ -29,6 +29,6 @@ node server.js
 cd frontend
 npm install
 npm start
-# keshav bkl 2 baar
+
 
 
